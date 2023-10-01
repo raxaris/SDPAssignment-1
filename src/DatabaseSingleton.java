@@ -1,4 +1,3 @@
-import javax.xml.crypto.Data;
 import java.sql.*;
 public class DatabaseSingleton {
     private static DatabaseSingleton instance;
@@ -17,11 +16,15 @@ public class DatabaseSingleton {
         String connectionUrl = "jdbc:postgresql://localhost:5432/cars";
         try {
             Class.forName("org.postgresql.Driver");
-            Connection con = DriverManager.getConnection(connectionUrl, "postgres", "123");
-            return con;
+            return DriverManager.getConnection(connectionUrl, "postgres", "123");
         } catch (Exception e) {
-            System.out.println(e.getMessage());
-            return null;
+            throw new SQLException("Failed to get a database connection.", e);
+        }
+    }
+
+    public void closeConnection(Connection connection) throws SQLException {
+        if (connection != null) {
+            connection.close();
         }
     }
 }
