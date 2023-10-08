@@ -1,2 +1,2 @@
-# SDP-Assignment-1
- Singleton
+# SDP-Assignments
+ Patterns
