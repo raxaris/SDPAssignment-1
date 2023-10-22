@@ -40,6 +40,11 @@ public class FordMustang implements GasolineCar{
         System.out.println("Current fuel level: " + currentVolume + "L; " + kilometresLeft + " kilometres left");
     }
 
+    @Override
+    public void chargeAccumulator(float time, float power) {
+        System.out.println("Accumulator charged " + time * power + " Watts");
+    }
+
     public float getTankVolume() {
         return tankVolume;
     }

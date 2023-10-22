@@ -13,7 +13,7 @@ public class GasolineAdapter implements ElectricCar{
 
     @Override
     public void charge(float time, float chargingStationPower) {
-        throw new UnsupportedOperationException();
+        gasolineCar.chargeAccumulator(time,chargingStationPower);
     }
     public void charge(float volume){
         gasolineCar.fillFuel(volume);

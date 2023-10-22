@@ -5,5 +5,6 @@ public interface GasolineCar {
     public void fillFuel(float volume);
     public void park();
     public void gasolineLeft();
+    public void chargeAccumulator(float time, float power);
 
 }

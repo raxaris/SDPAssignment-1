@@ -8,7 +8,8 @@ public class Main {
             System.out.println("Assignment-3 Menu. Make a choice.");
             System.out.println("1. Check Ford Mustang class (Adaptee)");
             System.out.println("2. Check Tesla Model S class (Target)");
-            System.out.println("3. Check Adapter");
+            System.out.println("3. Check Adapter1");
+            System.out.println("4. Check Adapter2");
             System.out.println("0. Exit");
             int answer = scanner.nextInt();
             switch (answer) {
@@ -43,8 +44,22 @@ public class Main {
                     ElectricCar mustangAdapter = new GasolineAdapter(dreamerMustang);
                     mustangAdapter.drive();
                     mustangAdapter.batteryLeft();
-                    mustangAdapter.charge(10);
+                    mustangAdapter.charge(100);
                     mustangAdapter.autoPark();
+                    break;
+
+                case 4:
+                    System.out.println("Reversed case");
+                    System.out.println();
+                    System.out.println("Adapter:");
+                    System.out.println("Tesla that wanted to be a Mustang");
+                    ElectricCar dreamerTesla = new TeslaModelS(100);
+                    GasolineCar teslaAdapter = new ElectricAdapter(dreamerTesla);
+                    teslaAdapter.drive();
+                    teslaAdapter.gasolineLeft();
+                    teslaAdapter.fillFuel(100);
+                    teslaAdapter.park();
+                    teslaAdapter.chargeAccumulator(3600,100);
                     break;
 
                 case 0:

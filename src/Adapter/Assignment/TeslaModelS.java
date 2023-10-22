@@ -40,6 +40,7 @@ public class TeslaModelS implements ElectricCar{
 
     public void charge(float volume){
         currentKWH += volume;
+        System.out.print("Charged with " + volume + " Watts. ");
         batteryLeft();
     }
     @Override
